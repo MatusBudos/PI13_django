@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Blogy</h1>
+    {% if autori %}
+    <h2>Autori:</h2>
+    <ul>
+        {% for autor in autori %}
+        <li>{{autor}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if kategorie %}
+    <h2>Kategórie:</h2>
+    <ul>
+        {% for kategoria in kategorie %}
+        <li>{{kategoria}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if posty%}
+    <h2>Posty:</h2>
+    <ul>
+        {% for post in posty %}
+        <h3>{{post.nadpis}}</h3>
+        <p><strong>Autor: </strong>{{post.autor.meno}} {{post.autor.priezvisko}} ({{post.autor.prezyvka}})</p>
+        <p><strong>Dátum vytvorenia: </strong>{{post.create_date}}</p>
+        <p>{{post.text}}</p>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
