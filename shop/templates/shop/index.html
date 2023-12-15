@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>E-shop</h1>
+    {% if users %}
+    <h2>Použivatelia:</h2>
+    <ul>
+        {% for user in users %}
+        <li>{{user}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if orders %}
+    <h2>Objednávky:</h2>
+    <ul>
+        {% for order in orders %}
+        <li><strong>Zákazník: </strong>{{order.user.meno}} {{order.user.priezvisko}}
+        <p><strong>Produkt: </strong>{{order.produkt.nazov}}</p>
+        <p><strong>Čas objednania: </strong>{{order.datum}}</p></li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if kategorie %}
+    <h2>Kategórie:</h2>
+    <ul>
+        {% for kategoria in kategorie %}
+        <li>{{kategoria}}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    {% if produkty%}
+    <h2>Produkty:</h2>
+    <ul>
+        {% for produkt in produkty %}
+        <h3>{{produkt.nazov}}</h3>
+        <p><strong>Kategória: </strong>{{produkt.kategoria}}</p>
+        <p><strong>Výrobca: </strong>{{produkt.vyrobca}}</p>
+        <p><strong>Cena: </strong>{{produkt.cena}}</p>
+        <p><strong>Popis: </strong>{{produkt.popis}}</p>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
