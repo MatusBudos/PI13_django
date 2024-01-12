@@ -37,11 +37,11 @@
     <h2>Produkty:</h2>
     <ul>
         {% for produkt in produkty %}
-        <h3>{{produkt.nazov}}</h3>
+        <ul><li><h3>{{produkt.nazov}}</h3>
         <p><strong>Kategória: </strong>{{produkt.kategoria}}</p>
         <p><strong>Výrobca: </strong>{{produkt.vyrobca}}</p>
         <p><strong>Cena: </strong>{{produkt.cena}}</p>
-        <p><strong>Popis: </strong>{{produkt.popis}}</p>
+        <p><strong>Popis: </strong>{{produkt.popis}}</p></li></ul>
         {% endfor %}
     </ul>
     {% endif %}

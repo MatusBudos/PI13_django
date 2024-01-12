@@ -1,0 +1,38 @@
+body {
+    background-color: #483C32 ;
+}
+
+h1 {
+    text-align: center;
+    color: #F0F0F0;
+    
+}
+.post {
+    border-style: solid;
+    border-color: gray;
+    background-color: #fff700;
+    border-radius: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.text {
+    margin-left: 10px;
+}
+
+.autori {
+    border-style: solid;
+    border-color: #483C32;
+    background-color: #F0FF42;
+    border-radius: 25px;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+
+.autori p {
+    margin-left: 5px;
+    margin-right: 5px;
+    font-size: 18px;
+}
