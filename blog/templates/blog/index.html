@@ -15,22 +15,33 @@
         <p>{{autor}}</p>
         {% endfor %}
     </div>
+    <div class="obrazok">
+<img src="{% static 'blog/autor.jpg' %}" alt="Autor">
+    </div>
     {% endif %}
     {% if kategorie %}
     <h1>Kategórie</h1>
-    <ul>
+    <div class="kategorie">
         {% for kategoria in kategorie %}
-        <li>{{kategoria}}</li>
+        <p>{{kategoria}}</p>
         {% endfor %}
-    </ul>
+    </div>
+    <div class="row">
+        <div class="column">
+    <img src="{% static 'blog/celebrity.png' %}" alt="Autor">
+        </div>
+        <div class="column">
+    <img src="{% static 'blog/varenie.jpg' %}" alt="Autor">
+        </div>
     {% endif %}
     {% if posty%}
     <h1>Posty</h1>
         {% for post in posty %}
     <div class="post">
         <div class = "text">
-        <h3>{{post.nadpis}}</h3>
+        <p><strong>{{post.nadpis}}</strong></p>
         <p><strong>Autor: </strong>{{post.autor.meno}} {{post.autor.priezvisko}} ({{post.autor.prezyvka}})</p>
+        <p><strong>Kategória: </strong>{{post.kategoria}}</p>
         <p><strong>Dátum vytvorenia: </strong>{{post.create_date}}</p>
         <p>{{post.text}}</p>
     </div>

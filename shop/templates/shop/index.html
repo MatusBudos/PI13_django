@@ -1,49 +1,58 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'shop/style.css'%}">
     <title>Document</title>
 </head>
 <body>
-    <h1>E-shop</h1>
     {% if users %}
-    <h2>Použivatelia:</h2>
-    <ul>
+    <h1>Použivatelia</h1>
+    <div class="uzivatel">
         {% for user in users %}
-        <li>{{user}}</li>
+        <p>{{user}}</p>
         {% endfor %}
-    </ul>
+    </div>
     {% endif %}
     {% if orders %}
-    <h2>Objednávky:</h2>
-    <ul>
+    <h1>Objednávky</h1>
+    <div class="riadok">
         {% for order in orders %}
-        <li><strong>Zákazník: </strong>{{order.user.meno}} {{order.user.priezvisko}}
+        <div class="stlpec">
+        <div class="objednavka">
+        <p><strong>Zákazník: </strong>{{order.user.meno}} {{order.user.priezvisko}}</p>
         <p><strong>Produkt: </strong>{{order.produkt.nazov}}</p>
-        <p><strong>Čas objednania: </strong>{{order.datum}}</p></li>
+        <p><strong>Čas objednania: </strong>{{order.datum}}</p>
+        </div>
+    </div>
         {% endfor %}
-    </ul>
+</div>
+<div class="obrazok">
+<img src="{% static 'shop/objednavka.png' %}" alt="Objednávka">
+</div>
     {% endif %}
     {% if kategorie %}
-    <h2>Kategórie:</h2>
-    <ul>
+    <h1>Kategórie</h1>
+    <div class="kategorie">
         {% for kategoria in kategorie %}
-        <li>{{kategoria}}</li>
+        <p>{{kategoria}}</p>
         {% endfor %}
-    </ul>
+    </div>
     {% endif %}
     {% if produkty%}
-    <h2>Produkty:</h2>
+    <h1>E-shop</h1>
     <ul>
         {% for produkt in produkty %}
-        <ul><li><h3>{{produkt.nazov}}</h3>
+        <div class="produkt">
+        <h3>{{produkt.nazov}}</h3>
         <p><strong>Kategória: </strong>{{produkt.kategoria}}</p>
         <p><strong>Výrobca: </strong>{{produkt.vyrobca}}</p>
         <p><strong>Cena: </strong>{{produkt.cena}}</p>
-        <p><strong>Popis: </strong>{{produkt.popis}}</p></li></ul>
+        <p><strong>Popis: </strong>{{produkt.popis}}</p>
+    </div>
         {% endfor %}
-    </ul>
     {% endif %}
 </body>
 </html>

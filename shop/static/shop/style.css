@@ -1,0 +1,53 @@
+body {
+  background-color: gray; 
+}
+
+h1 {
+  text-align: center;
+  color: #333333; 
+}
+
+h3 {
+  margin-left: 10px;
+  font-size: 120%;
+  color: #333333; 
+  text-align: center;
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.objednavka, .kategorie, .produkt, .uzivatel {
+  border-style: solid;
+  border-color: #5DADE2; 
+  background-color: #F9E79F; 
+  margin: auto;
+  width: 50%;
+}
+
+.objednavka p, .kategorie p, .produkt p, .uzivatel p {
+  margin-left: 10px;
+  font-size: 120%;
+  color: #333333; 
+  padding-left: 25px;
+  padding-right: 25px;
+}
+
+.riadok {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.stlpec {
+  flex: calc(33% - 20px);
+  box-sizing: border-box;
+  padding-bottom: 30px;
+}
+
+.obrazok {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-top: 20px;
+}

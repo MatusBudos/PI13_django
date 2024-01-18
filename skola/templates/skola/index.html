@@ -1,35 +1,55 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'skola/style.css'%}">
     <title>Document</title>
 </head>
 <body>
-    <h1>Moja škola</h1>
-    {% if triedy %}
-    <h2>Triedy:</h2>
-    <ul>
-        {% for trieda in triedy %}
-        <li>{{trieda}}</li>
-        {% endfor %}
-    </ul>
+    <div class="riadok">
+        <div class="stlpec">
+        {% if studenti %}
+        <h1>Študenti</h1>
+        <div class="student">
+            {% for student in studenti %}
+            <p>{{student}}</p>
+            {% endfor %}
+        </div>
+    </div>
     {% endif %}
     {% if ucitelia %}
-    <h2>Učitelia:</h2>
-    <ul>
+    <div class ="stlpec">
+    <h1>Učitelia</h1>
+    <div class="ucitel">
         {% for ucitel in ucitelia %}
-        <li>{{ucitel}}</li>
+        <p>{{ucitel}}</p>
         {% endfor %}
-    </ul>
+    </div>
+</div>
+</div>
     {% endif %}
-    {% if studenti %}
-    <h2>Študenti:</h2>
-    <ul>
-        {% for student in studenti %}
-        <li>{{student}}</li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+    <div class="riadok">
+        <div class="stlpec">
+        {% if triedy %}
+        <h1>Triedy</h1>
+        <div class="trieda">
+            {% for trieda in triedy %}
+            <b><p>{{trieda}}</p>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+    
+    <div class="riadok">
+        <div class="stlpec">
+    <div class="obrazok">
+        <img src="{% static 'skola/skola.jpg' %}" alt="Škola">
+    </div>
+</div>
+</div>
+{% endif %}
 </body>
 </html>
+

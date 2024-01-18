@@ -1,38 +1,51 @@
 body {
-    background-color: #483C32 ;
+  background-color: #f0f4f7; 
 }
 
 h1 {
-    text-align: center;
-    color: #F0F0F0;
-    
-}
-.post {
-    border-style: solid;
-    border-color: gray;
-    background-color: #fff700;
-    border-radius: 25px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 10px;
+  text-align: center;
+  color: #3498db;
 }
 
-.text {
-    margin-left: 10px;
+.kategorie, .autori, .uzivatel, .post {
+  border-style: solid;
+  border-color: #2ecc71;
+  background-color: #f9e79f;
+  border-radius: 25px;
+  text-align: center;
 }
 
-.autori {
-    border-style: solid;
-    border-color: #483C32;
-    background-color: #F0FF42;
-    border-radius: 25px;
-    margin-left: 5px;
-    margin-right: 5px;
-    margin-bottom: 10px;
+.kategorie p, .autori p, .post p, .uzivatel p {
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 19px;
 }
 
-.autori p {
-    margin-left: 5px;
-    margin-right: 5px;
-    font-size: 18px;
+.riadok {
+  display: flex;
+}
+
+.stlpec {
+  flex: 50%;
+  padding: 5px;
+  text-align: center;
+}
+
+.obrazok {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  margin-top: 20px;
+}
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 50%;
+  padding: 5px;
+  text-align: center;
+  padding-top: 20px;
 }
