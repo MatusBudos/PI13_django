@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'shop/style.css'%}">
-    <title>Document</title>
+    <title>Môj e-shop</title>
 </head>
 <body>
     {% if users %}
@@ -30,7 +30,7 @@
         {% endfor %}
 </div>
 <div class="obrazok">
-<img src="{% static 'shop/objednavka.png' %}" alt="Objednávka">
+<img src="{% static 'shop/objednavka.png' %}" alt="Objednávka" title="Objednávka">
 </div>
     {% endif %}
     {% if kategorie %}
@@ -43,7 +43,6 @@
     {% endif %}
     {% if produkty%}
     <h1>E-shop</h1>
-    <ul>
         {% for produkt in produkty %}
         <div class="produkt">
         <h3>{{produkt.nazov}}</h3>
