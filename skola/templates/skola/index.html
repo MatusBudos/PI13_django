@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'skola/style.css'%}">
-    <title>Document</title>
+    <title>Škola</title>
 </head>
 <body>
+    <h1>Škola</h1>
     <div class="riadok">
         <div class="stlpec">
         {% if studenti %}
-        <h1>Študenti</h1>
+        <h2><a href="{% url 'studenti' %}">Študenti</h2></a>
         <div class="student">
             {% for student in studenti %}
             <p>{{student}}</p>
@@ -21,7 +22,7 @@
     {% endif %}
     {% if ucitelia %}
     <div class ="stlpec">
-    <h1>Učitelia</h1>
+    <h2><a href="{% url 'ucitelia' %}">Učitelia</h2></a>
     <div class="ucitel">
         {% for ucitel in ucitelia %}
         <p>{{ucitel}}</p>
@@ -33,10 +34,10 @@
     <div class="riadok">
         <div class="stlpec">
         {% if triedy %}
-        <h1>Triedy</h1>
+        <h2><a href="{% url 'triedy' %}">Triedy</h2></a>
         <div class="trieda">
             {% for trieda in triedy %}
-            <b><p>{{trieda}}</p>
+            <b><p><a href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a></p>
             {% endfor %}
         </div>
     </div>

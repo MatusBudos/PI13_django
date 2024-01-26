@@ -2,9 +2,19 @@ body {
   background-color: #483C32 ;
 }
 
-h1{
+h1, h2{
   text-align: center;
   color: #F0F0F0;  
+}
+
+a {
+  color: #F0F0F0;
+  text-decoration: none;
+}
+
+p a {
+  text-decoration: none;
+  color: black;
 }
 
 .student, .ucitel, .trieda{
