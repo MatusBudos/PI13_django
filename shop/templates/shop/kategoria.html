@@ -1,0 +1,29 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'shop/style.css'%}">
+    <title>Môj e-shop</title>
+</head>
+<body>
+    <h1>E-shop</h1>
+        {% for kategoria in kategorie %}
+        <div class="produkt">
+        <p><a href="{% url 'kategoria' kategoria=kategoria %}">{{kategoria}}</a></p>
+        </div>
+      {% endfor %}
+      {% if produkty%}
+        {% for produkt in produkty %}
+        <div class="produkt">
+        <h3><a href="{% url 'produkt' produkt=produkt %}">{{produkt.nazov}}</a></h3>
+        <p><strong>Kategória: </strong>{{produkt.kategoria}}</p>
+        <p><strong>Výrobca: </strong>{{produkt.vyrobca}}</p>
+        <p><strong>Cena: </strong>{{produkt.cena}}</p>
+        <p><strong>Popis: </strong>{{produkt.popis}}</p>
+    </div>
+        {% endfor %}
+    {% endif %}
+    </body>
+    </html>

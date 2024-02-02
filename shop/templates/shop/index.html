@@ -8,6 +8,12 @@
     <title>Môj e-shop</title>
 </head>
 <body>
+    <h1>E-shop</h1>
+        {% for kategoria in kategoria %}
+        <div class="produkt">
+        <p><a href="{% url 'kategoria' kategoria=kategoria %}">{{kategoria}}</a></p>
+        </div>
+      {% endfor %}
     {% if users %}
     <h1>Použivatelia</h1>
     <div class="uzivatel">
@@ -42,14 +48,11 @@
     </div>
     {% endif %}
     {% if produkty%}
-    <h1>E-shop</h1>
+    <h1>Produkty</h1>
         {% for produkt in produkty %}
         <div class="produkt">
-        <h3>{{produkt.nazov}}</h3>
-        <p><strong>Kategória: </strong>{{produkt.kategoria}}</p>
-        <p><strong>Výrobca: </strong>{{produkt.vyrobca}}</p>
+        <p><strong>Názov: </strong>{{produkt.nazov}}</p>
         <p><strong>Cena: </strong>{{produkt.cena}}</p>
-        <p><strong>Popis: </strong>{{produkt.popis}}</p>
     </div>
         {% endfor %}
     {% endif %}

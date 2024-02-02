@@ -28,7 +28,7 @@ class Produkt(models.Model):
     cena = models.DecimalField(max_digits=6, decimal_places=2)
 
     def __str__(self):
-        return f"{self.nazov} {self.kategoria} {self.popis} {self.kategoria} {self.cena}"
+        return f"{self.nazov}"
     
 class Order(models.Model):
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)

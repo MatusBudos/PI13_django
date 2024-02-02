@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'shop/style.css'%}">
+    <title>Môj e-shop</title>
+</head>
+<body>
+    <h1>E-shop</h1>
+        <div class="produkt">
+        <h3>{{produkt.nazov}}</h3>
+        <p><strong>Kategória: </strong>{{produkt.kategoria}}</p>
+        <p><strong>Výrobca: </strong>{{produkt.vyrobca}}</p>
+        <p><strong>Cena: </strong>{{produkt.cena}}</p>
+        <p><strong>Popis: </strong>{{produkt.popis}}</p>
+    </div>
+</body>
+</html>
