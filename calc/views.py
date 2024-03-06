@@ -31,7 +31,7 @@ def calc(request):
                 a = a,
                 b = b,
                 operator = operator,
-                vysledok = vysledok,
+                vysledok = round(vysledok, 2),
             )       
             priklad.save()
         return render(request, "calc/index.html", {"vysledok":vysledok, "a":a, "b":b, "operator":operator})

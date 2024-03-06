@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Testovač</title>
+</head>
+<body>
+    <h1>Testovač</h1>
+    <form method="POST">
+        {% csrf_token %}
+        <h2>{{priklad.a}} {{priklad.operator}} {{priklad.b}} = <input name="vysledok" type="text"> <input type="submit"></h2>
+        <h3>{{vysledok}}</h3>
+        <input type="hidden" name="spravny_vysledok" value="{{priklad.vysledok}}">
+        <input type="hidden" name="skore" value="{{skore}}">
+        <h4>Skóre: {{skore}}</h4>
+        <h4>Najvyššie skóre: {{high_score}}</h4>
+
+    </form>
+</body>
+</html>
