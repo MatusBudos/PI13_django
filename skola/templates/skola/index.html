@@ -1,56 +1,36 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'skola/style.css'%}">
-    <title>Škola</title>
-</head>
-<body>
-    <h1><a href="{% url 'skola' %}">Škola</a></h1>
-    <div class="riadok">
-        <div class="stlpec">
-        {% if studenti %}
-        <h2><a href="{% url 'studenti' %}">Študenti</h2></a>
-        <div class="student">
-            {% for student in studenti %}
-            <p>{{student}}</p>
-            {% endfor %}
-        </div>
-    </div>
-    {% endif %}
-    {% if ucitelia %}
-    <div class ="stlpec">
-    <h2><a href="{% url 'ucitelia' %}">Učitelia</h2></a>
-    <div class="ucitel">
-        {% for ucitel in ucitelia %}
-        <p>{{ucitel}}</p>
+{% extends "base.html" %}
+{% block content %}
+{% if triedy %}
+    <div class="container tp-3">
+        <h2>Triedy</h2>
+        <ul class= "list-group">
+        {% for trieda in triedy %}
+        <li class="list-group-item"><a class= "link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a></li>
         {% endfor %}
+        </ul>
     </div>
-</div>
-</div>
-    {% endif %}
-    <div class="riadok">
-        <div class="stlpec">
-        {% if triedy %}
-        <h2><a href="{% url 'triedy' %}">Triedy</h2></a>
-        <div class="trieda">
-            {% for trieda in triedy %}
-            <b><p><a href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a></p>
-            {% endfor %}
-        </div>
-    </div>
-</div>
-    
-    <div class="riadok">
-        <div class="stlpec">
-    <div class="obrazok">
-        <img src="{% static 'skola/skola.jpg' %}" alt="Škola" title="Škola">
-    </div>
-</div>
-</div>
 {% endif %}
-</body>
-</html>
+    
+{% if studenti %}
+    <div class="container tp-3">
+        <h2>Študenti</h2>
+        <ul class= "list-group">
+        {% for student in studenti %}
+        <li class="list-group-item">{{student}}</li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endif %}
 
+{% if ucitelia %}
+    <div class="container tp-3">
+        <div class ="stlpec">
+        <h2>Učitelia</h2>
+        <ul class= "list-group">
+        {% for ucitel in ucitelia %}
+        <li class="list-group-item">{{ucitel}}</li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endif %}
+{% endblock %}
