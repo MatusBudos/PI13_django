@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>{{student.meno}} {{student.priezvisko}}</h2>
+    <h4>Triedny učiteľ: <a class= "link-offset-2 link-underline link-underline-opacity-0" href="{% url 'ucitel' ucitel=triedny_ucitel.id %}">{{triedny_ucitel.titul}} {{triedny_ucitel.meno}} {{triedny_ucitel.priezvisko}}</a></h4>
+    <h4>Trieda:  <a class= "link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a></h4>
+{% endblock %}
+

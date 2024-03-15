@@ -1,0 +1,5 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>{{ucitel.titul}} {{ucitel.meno}} {{ucitel.priezvisko}}</h2>
+    <h4>Trieda: <a class= "link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a></h4>
+{% endblock %}
