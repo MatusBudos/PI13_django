@@ -33,4 +33,16 @@
         </ul>
     </div>
 {% endif %}
+
+{% if kruzky %}
+    <div class="container tp-3">
+        <div class ="stlpec">
+        <h2>Krúžky</h2>
+        <ul class= "list-group">
+        {% for kruzok in kruzky %}
+        <li class="list-group-item"><a class= "link-offset-2 link-underline link-underline-opacity-0"  href="{% url 'kruzok' kruzok=kruzok.id %}" >{{kruzok}}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+{% endif %}
 {% endblock %}

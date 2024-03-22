@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>{{kruzok.nazov}} {{kruzok.skratka}}</h2>
+    <h4>Učiteľ: <a class= "link-offset-2 link-underline link-underline-opacity-0" href="{% url 'ucitel' ucitel=ucitel.id %}">{{kruzok.ucitel}}</a></h4>
+    {%if studenti%}
+    <h4>Študenti: </h4>
+    {% for student in studenti %}
+    <h5><a class= "link-offset-2 link-underline link-underline-opacity-0" href="{% url 'student' student=student.id %}">{{student}}</a></h5>
+    {%endfor%}
+    {%endif%}
+{% endblock %}

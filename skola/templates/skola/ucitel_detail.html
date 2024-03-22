@@ -2,4 +2,8 @@
 {% block content %}
     <h2>{{ucitel.titul}} {{ucitel.meno}} {{ucitel.priezvisko}}</h2>
     <h4>Trieda: <a class= "link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a></h4>
+    {%if kruzok%}
+    <h4>Krúžok: </h4>
+    <h5><a class= "link-offset-2 link-underline link-underline-opacity-0"   href="{% url 'kruzok' kruzok=kruzok %}" >{{kruzok.nazov}}</a></h5>
+    {%endif%}
 {% endblock %}
