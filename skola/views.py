@@ -41,7 +41,10 @@ def vypis_studenta(request, student):
 def vypis_ucitela(request, ucitel):
     ucitel = Ucitel.objects.get(id = ucitel)
     trieda = Trieda.objects.get(nazov = ucitel.trieda)
-    kruzok = Kruzok.objects.get(ucitel = ucitel.pk)
+    try:
+        kruzok = Kruzok.objects.get(ucitel = ucitel.pk)
+    except:
+        kruzok = ""
     return render(request, "skola/ucitel_detail.html", {"ucitel":ucitel, "trieda":trieda, "kruzok":kruzok})
 
 def vypis_kruzkov(request):
