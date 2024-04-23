@@ -7,11 +7,10 @@ django.setup()
 from skola.models import *
 import random
 import csv
-from datetime import datetime
 
 filesize = 10643
 
-today = datetime.date.today()
+
 
 
 

@@ -20,6 +20,8 @@ class Ucitel(models.Model):
     ulica = models.CharField(max_length = 30, null=True)
     psc = models.CharField(max_length = 6, null=True)
     obec = models.CharField(max_length = 20, null=True)
+    rok_narodenia = models.IntegerField(null=True)
+    datum_narodenia = models.CharField(max_length=10, null=True)
 
     def __str__(self):
         if self.trieda:
@@ -52,6 +54,9 @@ class Student(models.Model):
     ulica = models.CharField(max_length = 30, null=True)
     psc = models.CharField(max_length = 6, null=True)
     obec = models.CharField(max_length = 20, null=True)
+    rok_narodenia = models.IntegerField(null=True)
+    datum_narodenia = models.CharField(max_length=10, null=True)
+    vek = models.IntegerField(null=True)
 
     def __str__(self):
         return f"{self.meno} {self.priezvisko} {self.trieda}"

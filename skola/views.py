@@ -44,7 +44,7 @@ def vypis_ucitela(request, ucitel):
     try:
         kruzok = Kruzok.objects.get(ucitel = ucitel.pk)
     except:
-        kruzok = ""
+        kruzok = " "
     return render(request, "skola/ucitel_detail.html", {"ucitel":ucitel, "trieda":trieda, "kruzok":kruzok})
 
 def vypis_kruzkov(request):
