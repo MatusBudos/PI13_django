@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponse
 from . models import *
+from . forms import *
 
 def vypis_skola(request):
     triedy = Trieda.objects.all().order_by("nazov")
@@ -40,12 +41,15 @@ def vypis_studenta(request, student):
 
 def vypis_ucitela(request, ucitel):
     ucitel = Ucitel.objects.get(id = ucitel)
-    trieda = Trieda.objects.get(nazov = ucitel.trieda)
+    if ucitel.trieda:
+        trieda = Trieda.objects.get(nazov = ucitel.trieda)
+    else:
+        trieda = "Učiteľ nemá triedu"
     try:
         kruzok = Kruzok.objects.get(ucitel = ucitel.pk)
+        return render(request, "skola/ucitel_detail.html", {"ucitel":ucitel, "trieda":trieda, "kruzok":kruzok})
     except:
-        kruzok = " "
-    return render(request, "skola/ucitel_detail.html", {"ucitel":ucitel, "trieda":trieda, "kruzok":kruzok})
+        return render(request, "skola/ucitel_detail.html", {"ucitel":ucitel, "trieda":trieda})
 
 def vypis_kruzkov(request):
     kruzky = Kruzok.objects.all().order_by("nazov")
@@ -56,3 +60,25 @@ def vypis_kruzku(request, kruzok):
     ucitel = Ucitel.objects.get(kruzok = kruzok)
     studenti = Student.objects.filter(kruzok = kruzok).order_by("priezvisko")
     return render(request, "skola/kruzok_detail.html", {"kruzok":kruzok, "ucitel":ucitel, "studenti":studenti})
+
+def pridaj_uzivatel(request):
+    if request.method == "POST":
+        uzivatel = Uzivatel(
+            meno = request.POST["meno"],
+            priezvisko = request.POST["priezvisko"],
+            email = request.POST["email"],
+            datum = request.POST["datum"],
+        )
+        uzivatel.save()
+        return HttpResponse("OK")
+    else:
+        return render(request, "skola/pridaj_uzivatel.html")
+    
+def pridaj_uzivatel2(request):
+    if request.method == "POST":
+        form = UzivatelForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return HttpResponse("OK")
+    else:
+        form = UzivatelForm()

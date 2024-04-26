@@ -1,10 +1,14 @@
 {% extends "base.html" %}
 {% block content %}
     <h2>{{ucitel.titul}} {{ucitel.meno}} {{ucitel.priezvisko}}</h2>
+    {%if trieda == "Učiteľ nemá triedu"%}
+    <h4>Trieda: {{trieda}}</h4>
+    {%else%}
     <h4>Trieda: <a class= "link-offset-2 link-underline link-underline-opacity-0" href="{% url 'trieda' trieda=trieda %}">{{trieda}}</a></h4>
+    {%endif%}
     {%if kruzok%}
     <h4>Krúžok: </h4>
-    <h5><a class= "link-offset-2 link-underline link-underline-opacity-0"   href="{% url 'kruzok' kruzok=kruzok %}" >{{kruzok.nazov}}</a></h5>
+    <h5><a class= "link-offset-2 link-underline link-underline-opacity-0"   href="{% url 'kruzok' kruzok=kruzok.id %}" >{{kruzok.nazov}}</a></h5>
     {%endif%}
     <h4>Bydlisko: {{ucitel.ulica}}, {{ucitel.psc}}, {{ucitel.obec}}</h4>
     <h4>Dátum narodenia: {{ucitel.datum_narodenia}}</h4>

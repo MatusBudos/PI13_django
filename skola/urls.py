@@ -12,4 +12,6 @@ urlpatterns = [
     path('triedy/<trieda>/', views.vypis_trieda, name='trieda'),
     path('studenti/<student>/', views.vypis_studenta, name='student'),
     path('ucitelia/<ucitel>/', views.vypis_ucitela, name='ucitel'),
+    path('pridaj_uzivatel/', views.pridaj_uzivatel, name='pridaj-uzivatel'),
+    path('pridaj_uzivatel2', views.pridaj_uzivatel2, name='pridaj-uzivatel2')
 ]

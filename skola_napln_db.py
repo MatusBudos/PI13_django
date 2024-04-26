@@ -68,7 +68,7 @@ def ziskaj_datum(vek):
             den = random.randint(1,28)
     else:
         den = random.randint(1,30)
-    return f"{den}{"."} {mesiac}{"."} {rok_narodenia}"
+    return f"{den}. {mesiac}. {rok_narodenia}"
     
 
 
